@@ -1,0 +1,8 @@
+#gmbr {
+    width: 200px;
+    height: 200px;
+    background-color: gray;
+    border-radius: 0;
+    transition: 1s;
+    display: none; 
+}

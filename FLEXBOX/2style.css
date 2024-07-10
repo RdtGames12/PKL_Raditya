@@ -87,7 +87,7 @@ body {
   border-radius: 10px;
   background-color: #aaa;
   overflow: hidden;
-  margin: 15px 0;
+  margin: 15px;
   flex: 1;
 }
 .card .header {

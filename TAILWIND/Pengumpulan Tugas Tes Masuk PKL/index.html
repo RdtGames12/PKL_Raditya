@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agency</title>
+  <link href="./src/output.css" rel="stylesheet">
+  <style>
+    .bg-light-blue {
+      background-color: #ecf7fb;
+    }
+
+    .bg-dark-white {
+      background-color: #F8FCFD;
+    }
+
+    .bg-subscribe {
+      background-color: #0BC0EB;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div class="bg-light-blue">
+    <nav class="relative px-4 py-4 flex justify-between items-center bg-light-blue">
+      <a class="text-3xl font-bold leading-none px-8 text-indigo-600" href="#">
+        Agency
+      </a>
+      <div class="lg:hidden">
+        <button class="navbar-burger flex items-center text-blue-600 p-3">
+          <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <title>Mobile menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+          </svg>
+        </button>
+      </div>
+      <ul
+        class="hidden absolute top-1/2 left-96 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
+        <li><a class="text-sm text-gray-700 hover:text-gray-500" href="#">About</a></li>
+        <li><a class="text-sm text-gray-700 hover:text-gray-500" href="#">Services</a></li>
+        <li><a class="text-sm text-gray-700 hover:text-gray-500" href="#">Blog</a></li>
+        <li><a class="text-sm text-gray-700 hover:text-gray-500" href="#">Contact</a></li>
+        <li><a class="text-sm text-gray-700 hover:text-gray-500" href="#">Pricing</a></li>
+      </ul>
+      <a class="hidden border-2 border-black lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-light-blue hover:bg-indigo-600 text-black text-sm hover:text-white font-bold rounded-md"
+        href="#">Login</a>
+      <h1
+        class="hidden lg:inline-block py-2 px-6 bg-light-blue hover:bg-light-blue text-black text-sm hover:text-white font-bold rounded-md">
+      </h1>
+    </nav>
+    <div class="navbar-menu relative z-50 hidden">
+      <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+      <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+        <div class="flex items-center mb-8">
+          <a class="mr-auto text-3xl font-bold leading-none text-indigo-600" href="#">
+            Agency
+          </a>
+          <button class="navbar-close">
+            <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div>
+          <ul>
+            <li class="mb-1">
+              <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="#">About</a>
+            </li>
+            <li class="mb-1">
+              <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="#">Service</a>
+            </li>
+            <li class="mb-1">
+              <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="#">Blog</a>
+            </li>
+            <li class="mb-1">
+              <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="#">Contact</a>
+            </li>
+            <li class="mb-1">
+              <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="#">Pricing</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-auto">
+          <div class="pt-6">
+            <a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold text-black hover:text-white bg-gray-50 hover:bg-indigo-600 rounded-xl"
+              href="#">Login</a>
+          </div>
+          <p class="my-4 text-xs text-center text-gray-400">
+            <span>Copyright © Agency</span>
+          </p>
+        </div>
+      </nav>
+    </div>
+</body>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // open
+    const burger = document.querySelectorAll('.navbar-burger');
+    const menu = document.querySelectorAll('.navbar-menu');
+
+    if (burger.length && menu.length) {
+      for (var i = 0; i < burger.length; i++) {
+        burger[i].addEventListener('click', function () {
+          for (var j = 0; j < menu.length; j++) {
+            menu[j].classList.toggle('hidden');
+          }
+        });
+      }
+    }
+
+    // close
+    const close = document.querySelectorAll('.navbar-close');
+    const backdrop = document.querySelectorAll('.navbar-backdrop');
+
+    if (close.length) {
+      for (var i = 0; i < close.length; i++) {
+        close[i].addEventListener('click', function () {
+          for (var j = 0; j < menu.length; j++) {
+            menu[j].classList.toggle('hidden');
+          }
+        });
+      }
+    }
+
+    if (backdrop.length) {
+      for (var i = 0; i < backdrop.length; i++) {
+        backdrop[i].addEventListener('click', function () {
+          for (var j = 0; j < menu.length; j++) {
+            menu[j].classList.toggle('hidden');
+          }
+        });
+      }
+    }
+  });
+</script>
+</div>
+<!-- End Navbar -->
+
+<!-- Hero -->
+<section class="">
+  <div class="bg-light-blue px-6 text-center md:px-12 lg:text-left">
+    <div class="w-100 mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <div class="mt-12 lg:mt-0">
+          <h1 class="mt-2 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
+            We help you <br> to build your <br> Business <br>
+            <p class="mt-0 mb-0 text-xl font-medium text-gray-500 tracking-normal md:text-xl xl:text-xl">
+              Enthusiastically extend extensive customer service <br> before best of breed convergence completely.</p>
+          </h1>
+          <a class="lg:inline-block py-2 px-6 bg-indigo-600 text-white text-sm hover:text-white font-bold rounded-md pt-4 pb-3.5 uppercase leading-normal text-primary transition duration-150 ease-in-out hover:bg-opacity-10 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 hover:bg-indigo-800 dark:hover:bg-opacity-100"
+            data-te-ripple-init data-te-ripple-color="light" href="#!" role="button">Get a Quotes</a>
+        </div>
+        <div class="lg:mb-0">
+          <img src="./src/img/ag-hero-figure.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+<!-- End Hero -->
+
+<!-- Logo Awan -->
+<div class="bg-white">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div
+      class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+      <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1 opacity-60" src="./src/img/images.png"
+        alt="Goldline" width="158" height="48">
+      <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1 opacity-60" src="./src/img/images (1).png"
+        alt="Aven" width="158" height="48">
+      <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1 opacity-60"
+        src="./src/img/616495a3e13027228f744839_logo-5.png" alt="Kanba" width="158" height="48">
+      <img class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1 opacity-60"
+        src="./src/img/kyan-1.webp" alt="Kyan" width="158" height="48">
+      <img class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1 opacity-60"
+        src="./src/img/5ece4ff9123d6d0004ce5f89.png" alt="Spotify" width="158" height="48">
+    </div>
+  </div>
+</div>
+<!-- End Logo Awan -->
+
+<!-- Feature -->
+<div class="container my-24 mx-auto md:px-6">
+  <section class="mb-32 text-center">
+    <h2 class="mb-16 text-3xl font-bold">
+      Why Choose <br> Agency!
+    </h2>
+    <div class="grid gap-x-6 md:grid-cols-3 lg:gap-x-12">
+      <div class="mb-12 md:mb-0 shadow-xl rounded-lg overflow-hidden">
+        <div class="mb-6 px-4 rounded-md bg-primary-100 p-4 text-primary items-start">
+          <div class="w-16 h-16 bg-light-blue rounded-md"><img class="pl-3 pt-3" src="./src/img/website_1311544.png"
+              width="50" height="50"></div>
+        </div>
+        <h5 class="mb-4 text-lg font-bold text-left px-4">Design</h5>
+        <p class="text-neutral-500 text-left px-4">
+          Distinctively expedite real-time "outside the box" thinking whereas resource maximizing. Completely reinvent
+          extensive e-tailers via
+          <br> <br> <br>
+        </p>
+      </div>
+
+      <div class="mb-12 md:mb-0 shadow-xl rounded-lg overflow-hidden">
+        <div class="mb-6 rounded-md bg-primary-100 p-4 text-primary">
+          <div class="w-16 h-16 bg-orange-200 rounded-md"><img class="pl-3 pt-1.5"
+              src="./src/img/WebDev.00503f1d9fad11f88339fce10a889240.svg" width="50" height="50"></div>
+        </div>
+        <h5 class="mb-4 text-lg font-bold text-left px-4">Development</h5>
+        <p class="text-neutral-500 text-left px-4">
+          Distinctively expedite real-time "outside the box" thinking whereas resource maximizing. Completely reinvent
+          extensive e-tailers via
+          <br> <br> <br>
+        </p>
+      </div>
+
+      <div class="mb-12 md:mb-0 shadow-xl rounded-lg overflow-hidden">
+        <div class="mb-6 rounded-md bg-primary-100 p-4 text-primary">
+          <div class="w-16 h-16 bg-light-blue rounded-md"><img class="pl-3 pt-3" src="./src/img/Group-5.svg" width="50"
+              height="50"></div>
+        </div>
+        <h5 class="mb-4 text-lg font-bold text-left px-4">Marketing</h5>
+        <p class="text-neutral-500 text-left px-4">
+          Distinctively expedite real-time "outside the box" thinking whereas resource maximizing. Completely reinvent
+          extensive e-tailers via
+          <br> <br> <br>
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- End Feature -->
+
+<!-- Featured  -->
+<section class="">
+  <div class="bg-dark-white px-6 py-16 md:px-12 lg:text-left">
+    <div class="w-100 mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <div class="mb-12 lg:mb-0">
+          <img src="./src/img/featured.PNG" />
+        </div>
+        <div class="mt-12 lg:mt-0">
+          <h1 class="mt-2 mb-16 text-5xl font-bold tracking-tight md:text-5xl xl:text-5xl">
+            Make Your Website <br> Design more Creative <br> & Professional! <br> <br>
+            <p class="mt-0 mb-0 text-sm font-medium text-gray-400 tracking-normal md:text-xl xl:text-xl">
+              Professionally evolve web-enabled resources and error-free. <br> Interactively provide access to unique
+              architectures rather than <br> customized functionalities. Enthusiastically maintain user friendly <br>
+              processes through scalable process improvements. Conveniently <br> foster mission-critical collaboration
+              and idea-sharing</p>
+          </h1>
+          <a class="lg:inline-block py-2 px-6 bg-indigo-600 text-white text-sm hover:text-white font-bold rounded-md pt-4 pb-3.5 uppercase leading-normal text-primary transition duration-150 ease-in-out hover:bg-opacity-10 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 hover:bg-indigo-800 dark:hover:bg-opacity-100"
+            data-te-ripple-init data-te-ripple-color="light" href="#!" role="button">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<section class="">
+  <div class="bg-dark-white px-6 py-16 md:px-12 lg:text-left">
+    <div class="w-100 mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <div class="mt-12 lg:mt-0">
+          <h1 class="mt-2 mb-16 text-5xl font-bold tracking-tight md:text-5xl xl:text-5xl">
+            Development Make <br> Flexible foy Your <br> Best Demand! <br> <br>
+            <p class="mt-0 mb-0 text-sm font-medium text-gray-400 tracking-normal md:text-xl xl:text-xl">
+              Professionally evolve web-enabled resources and error-free. <br> Interactively provide access to unique
+              architectures rather than <br> customized functionalities. Enthusiastically maintain user friendly <br>
+              processes through scalable process improvements. Conveniently <br> foster mission-critical collaboration
+              and idea-sharing</p>
+          </h1>
+          <a class="lg:inline-block py-2 px-6 bg-indigo-600 text-white text-sm hover:text-white font-bold rounded-md pt-4 pb-3.5 uppercase leading-normal text-primary transition duration-150 ease-in-out hover:bg-opacity-10 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 hover:bg-indigo-800 dark:hover:bg-opacity-100"
+            data-te-ripple-init data-te-ripple-color="light" href="#!" role="button">Learn More</a>
+        </div>
+        <div class="mb-12 lg:mb-0">
+          <img src="./src/img/featured 2.PNG" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+<!-- End Featured  -->
+
+<!-- Blog -->
+<div class="container my-24 mx-auto md:px-6">
+  <section class="mb-32 text-center">
+    <h2 class="mb-16 text-3xl font-bold">
+      Read Our Blog
+    </h2>
+    <div class="grid gap-x-6 md:grid-cols-3 lg:gap-x-12">
+      <div class="mb-12 md:mb-0 shadow-xl rounded-lg overflow-hidden bg-dark-white">
+        <div class="inline-block px-4 rounded-md bg-primary-100 p-4 text-primary items-start">
+          <img class="rounded-md" src="./src/img/consultation2.jpeg">
+        </div>
+        <h5 class="mb-2 text-sm text-neutral-500 text-left px-4">Design</h5>
+        <p class="mb-4 font-semibold text-lg text-left px-4">
+          How great Content helps <br> drive success in Marketplace
+        </p>
+        <a href="" class="flex px-4 mb-4 text-indigo-600 font-medium">Read More →</a>
+      </div>
+
+      <div class="mb-12 md:mb-0 shadow-xl rounded-lg overflow-hidden bg-dark-white">
+        <div class="inline-block px-4 rounded-md bg-primary-100 p-4 text-primary items-start">
+          <img class="rounded-md" src="./src/img/Blog.PNG">
+        </div>
+        <h5 class="mb-2 text-sm text-neutral-500 text-left px-4">Marketing</h5>
+        <p class="mb-4 font-semibold text-lg text-left px-4">
+          Strossle International AB <br> ranked #1 on Deloitte 2018
+        </p>
+        <a href="" class="flex px-4 mb-4 text-indigo-600 font-medium">Read More →</a>
+      </div>
+
+      <div class="mb-12 md:mb-0 shadow-xl rounded-lg overflow-hidden bg-dark-white">
+        <div class="inline-block px-4 rounded-md bg-primary-100 p-4 text-primary items-start">
+          <img class="rounded-md" src="./src/img/Blog 2.PNG">
+        </div>
+        <h5 class="mb-2 text-sm text-neutral-500 text-left px-4">Development</h5>
+        <p class="mb-4 font-semibold text-lg text-left px-4">
+          What All Marketers Should <br> Know About Brand Safe
+        </p>
+        <a href="" class="flex px-4 mb-4 text-indigo-600 font-medium">Read More →</a>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- End Blog -->
+
+<!-- Testimonial -->
+<section class="mb-40">
+  <div class="relative overflow-hidden bg-cover bg-no-repeat" style="
+            background-position: 50%;
+            background-image: url('./src/img/testi-bg.png');
+            height: 500px;
+          ">
+    <div class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed">
+      <div class="flex h-full items-center justify-center">
+        <div class="px-6 text-center text-black md:px-12">
+          <h1 class="mt-2 mb-16 text-xl font-bold tracking-tight md:text-xl xl:text-xl">
+            "I've completed support from my Agency about 1 <br> years ago. Their make the prototyping process so <br>
+            easy and faster. I feel this is the best apps for <br> the prototyping use" <br> <br>
+            <div class="flex flex-col tracking-wider">
+              <label class="text-blue-600 font-bold text-base">William Smith</label>
+              <label class="text-gray-400 font-normal text-sm">CEO f Zavad Company</label>
+            </div>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Testimonial -->
+
+<!-- Subrek -->
+<section class="">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <div class="mx-auto max-w-screen-md sm:text-center bg-subscribe rounded-xl">
+      <h2
+        class="mb-8 pt-8 text-center text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl dark:text-white">
+        Subscribe Now for <br> Get Special Features!</h2>
+      <form action="#">
+        <div class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
+          <div class="relative w-full">
+            <label for="email" class="hidden mb-2 text-sm font-medium dark:text-gray-300">Email address</label>
+            <input
+              class="rounded-xl block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="Enter your email" type="email" id="email" required="">
+          </div>
+          <div>
+            <button type="submit"
+              class="bg-indigo-600 py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Submit→</button>
+          </div>
+        </div>
+        <br> <br> <br>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- End Subrek -->
+
+<!-- Footer -->
+<footer class="bg-white">
+  <div class="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div>
+        <div class="text-3xl font-bold leading-none text-indigo-600">
+          Agency
+        </div>
+        <p class="mt-4 max-w-xs text-gray-500">
+          Proffesionaly scale cross functional <br> human capital and extensive technology
+        </p>
+
+        <ul class="mt-8 flex gap-6">
+          <li>
+            <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+              <span class="sr-only">Google</span>
+
+              <img class="opacity-60" src="./src/img/1657955547black-google-icon.png" width="25" height="25">
+            </a>
+          </li>
+
+          <li>
+            <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+              <span class="sr-only">Twitter</span>
+
+              <img class="opacity-60" src="./src/img/1657046982twitter-icon-black.png" width="25" height="25">
+            </a>
+          </li>
+
+          <li>
+            <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+              <span class="sr-only">Instagram</span>
+
+              <img class="opacity-60" src="./src/img/1658588551instagram-logo-png-black.png" width="25" height="">
+            </a>
+          </li>
+
+          <li>
+            <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+              <span class="sr-only">linkedin</span>
+
+              <img class="opacity-60" src="./src/img/1656999237linkedin-logo-for-email-signature.png" width="25" height="25">
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4">
+        <div>
+          <p class="font-bold text-gray-900">Services</p>
+
+          <ul class="mt-6 space-y-4 text-sm">
+            <li>
+              <a href="#" class="text-gray-700 transition hover:opacity-75"> Design </a>
+            </li>
+
+            <li>
+              <a href="#" class="text-gray-700 transition hover:opacity-75"> Development </a>
+            </li>
+
+            <li>
+              <a href="#" class="text-gray-700 transition hover:opacity-75"> Marketing </a>
+            </li>
+
+            <li>
+              <a href="#" class="text-gray-700 transition hover:opacity-75"> Content Writing </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-bold text-gray-900">Company</p>
+
+          <ul class="mt-6 space-y-4 text-sm">
+            <li>
+              <a href="#" class="text-gray-700 transition hover:opacity-75"> About </a>
+            </li>
+
+            <li>
+              <a href="#" class="text-gray-700 transition hover:opacity-75"> Terms </a>
+            </li>
+
+            <li>
+              <a href="#" class="text-gray-700 transition hover:opacity-75"> Privacy Policy </a>
+            </li>
+
+            <li>
+              <a href="#" class="text-gray-700 transition hover:opacity-75"> Careers </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-bold text-gray-900">Portfolio</p>
+
+          <ul class="mt-6 space-y-4 text-sm">
+            <li>
+              <a href="#" class="text-gray-700 transition hover:opacity-75"> Portfolio </a>
+            </li>
+
+            <li>
+              <a href="#" class="text-gray-700 transition hover:opacity-75"> Single Case </a>
+            </li>
+
+            <li>
+              <a href="#" class="text-gray-700 transition hover:opacity-75"> Payment </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-bold text-gray-900">Contact</p>
+
+          <ul class="mt-6 space-y-4 text-sm">
+            <li>
+              <a href="#" class="text-gray-700 transition hover:opacity-75"> <b>Call : </b> 971 5546 963</a>
+            </li>
+
+            <li>
+              <a href="#" class="text-gray-700 transition hover:opacity-75"> <b>Email : </b> example@gmail.com </a>
+            </li>
+
+            <li>
+              <a href="#" class="text-gray-700 transition hover:opacity-75"> <b>Address : </b> Dhaka, Bangladesh </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-xs text-gray-500">Copyright&copy;Agency.All rights reserved</p>
+  </div>
+</footer>
+
+<!-- End Footer -->
+</body>
+
+</html>
